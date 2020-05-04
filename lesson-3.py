@@ -11,35 +11,47 @@ str = '!!!Погружение в IT-профессию!!! подразумев�
 #2 сформировать list со словами (split);
 
 #################
-# answer2 = str.split()
-# print(answer2)
+answer2 = str.split()
+print(answer2)
 #################
 #3 привести все слова к нижнему регистру (map);
 #################
-# answer3 = list(map(lambda x: x.lower(), answer2))
-# print(answer3)
+answer3 = list(map(lambda x: x.lower(), answer2))
+print(answer3)
 #################
 #4 получить из list пункта 3 dict, ключами которого являются слова, а значениями их количество появлений в тексте;
 #################
-# dict_new={}
-# for index in range(len(new_srt)):
-#     dict_new[new_srt[index]]=new_srt.count(new_srt[index])
-# print(dict_new)
+answer4 = {}
+dict = answer3*1
+for i in list(dict):
+    counts = 0
+    while i in list(dict):
+        if i in list(dict):
+            #print(list(str5))
+            counts+=1
+            dict.remove(i)
+            answer4[i] = counts
+print(answer4)
 #################
 #5 вывести 5 наиболее часто встречающихся слов (sort), вывести количество разных слов в тексте (set).
 #################
-# # max=0
-# # # list1=list(dict_new.values())
-# # # for index in range(len(dict_new)):
-# # #    if list1[index] > max:
-# # #        max=list1[index]
-# # # print (max)
-# list5=[]
-# list6=[]
-# list6 = [1 for i in range(5)]
-# list5=list(sorted(dict_new.values(), reverse=True))
-# for i in range(5):
-#     list6[i]=list5[i]
-# print( list6)
-# print(len(set(dict_new)))
+
+list_answer4 = list(answer4.items())
+list_answer4.sort(key=lambda i: i[1])
+list_answer4.reverse()
+count=0
+often_words=''
+for i in list_answer4:
+    if count !=5:
+        count+=1
+        often_words+=i[0]+', '
+print('5 наиболее часто встречающихся слов: ',often_words)
+
+set_one = set(answer3)
+set_second = set(answer3)
+set_third = set_one.intersection(set_second)
+count = 0
+for i in set_third:
+    count+=1
+print('Количество разных слов: ',count)
 #################
