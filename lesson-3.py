@@ -1,13 +1,14 @@
 #1 методами строк очистить текст от знаков препинания;
 #################
-import string
-import re
+print( '(1) методами строк очистить текст от знаков препинания;')
+print()
+str = '!!!Погружение в IT-профессию!!! подразумевает постоянный контакт с изучаемыми технологиями, выполнение практических заданий и общение с наставником. Для этого мы создали собственную среду обучения.'
 
-x_srt = open('The_Third_Lesson_Text.txt', 'r', encoding='UTF-8')
-x_srt = x_srt.read()
-x_srt = re.sub(r'[^\w\s]','',x_srt)
-x_srt = re.sub('\n',' ',x_srt)
-print(x_srt)
+str = str.replace(',', '').replace('.', '').replace(';','').replace('—','').replace('«','').replace('»','').replace('?','').replace('!','').replace('(','').replace(')','')
+print(str)
+
+print()
+
 #################
 #2 сформировать list со словами (split);
 
